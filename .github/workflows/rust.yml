@@ -1,0 +1,27 @@
+name: Rust
+on:
+  push:
+    branches: ["master"]
+  pull_request:
+    branches: ["master"]
+env:
+  CARGO_TERM_COLOR: always
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+    - uses: actions/checkout@v4
+    - uses: dtolnay/rust-toolchain@stable
+      with:
+        targets: wasm32-unknown-unknown
+    - uses: taiki-e/install-action@v2
+      with:
+        tool: trunk,protoc,wasm-bindgen
+    - uses: Swatinem/rust-cache@v2
+    - name: Build
+      run: ./build.sh
+    - uses: actions/upload-artifact@v4
+      with:
+        name: server
+        path: dist
+        if-no-files-found: ignore

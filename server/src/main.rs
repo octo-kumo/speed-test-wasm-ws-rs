@@ -28,9 +28,9 @@ impl Metrics {
     const MAX_POINTS: usize = 240;
     fn push_sample(&mut self, x: f64) {
         self.packets_series
-            .push_back((x, 2 * self.current_packets as f64));
+            .push_back((x, 2.0 * self.current_packets as f64));
         self.bytes_series
-            .push_back((x, 2 * self.current_bytes as f64));
+            .push_back((x, 2.0 * self.current_bytes as f64));
 
         self.last_packets = self.current_packets;
         self.last_bytes = self.current_bytes;
