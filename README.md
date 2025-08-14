@@ -4,6 +4,10 @@ A tech demo for upload speed testing using Rust, WebAssembly, ProtoBuf and WebSo
 
 > The README is AI generated coz im dead now, please bear with it
 
+## Demo
+
+Goto https://speed.yun.ng for a live demo.
+
 ## Overview
 
 **speed-test-wasm-ws-rs** is a Rust project featuring both a client and server:
