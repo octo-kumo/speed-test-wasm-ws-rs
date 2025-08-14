@@ -1,0 +1,21 @@
+[package]
+name = "client"
+version = "0.1.0"
+edition = "2021"
+
+[lib]
+crate-type = ["cdylib", "rlib"]
+
+[dependencies]
+eframe = { version = "0.32.0", features = ["default_fonts"] }
+prost = "0.14.1"
+wasm-bindgen = "0.2"
+web-sys = { version = "0.3", features = ["WebSocket", "HtmlCanvasElement"] }
+gloo-net = "0.6"
+wasm-bindgen-futures = "0.4"
+log = "0.4"
+console_error_panic_hook = "0.1"
+futures-util = { version = "0.3", features = ["sink"] }
+proto = { path = "../proto" }
+egui_plot = "0.33.0"
+gloo-timers = { version = "0.3.0", features = ["futures"] }

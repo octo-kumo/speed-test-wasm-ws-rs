@@ -1,0 +1,11 @@
+syntax = "proto3";
+package messages;
+
+message Request {
+  string action = 1;
+  string payload = 2;
+}
+
+message Response {
+  string result = 1;
+}
